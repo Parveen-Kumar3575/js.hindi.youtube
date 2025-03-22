@@ -49,3 +49,4 @@ let obj3 = {
  /* ye undefined dega kyuki jab bhi hum [Symbol("desc")] likhte hai to wo ek naya unqiue symbol bna -
   deta hai  matlab jo symbol object me hai wo alag symbol hai aur jo hum print krwa rahe hai wo alag symbol hai 
   isilie wo undefined dera hai */
+  //done

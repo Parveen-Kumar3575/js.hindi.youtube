@@ -56,4 +56,6 @@ obj.greeting = function(){
 console.log(obj.greeting)   // returns function(anonymous)
 obj.greeting()  // calls the function greeting
 
-obj.greeting2()
+obj.greeting2() 
+
+//done

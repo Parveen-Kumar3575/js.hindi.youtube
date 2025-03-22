@@ -83,3 +83,4 @@ let createObj = Object.create(obj,{
 )
 console.log(createObj)
 console.log(createObj.name)
+//done
