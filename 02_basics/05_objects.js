@@ -70,6 +70,7 @@ console.log(Object.values(arr)); //Object.values(objName) returns array of value
 console.log(Object.entries(arr));   //Object.entries(objName) returns key-value pairs
 console.log(obj1.hasOwnProperty('1'))   //returns true or false
 
+//Niche
 //Isme protype ki jagah koi object aata hai aur wo inherit krta hai jisse acces kia ja skta hai na ki copy krta hai 
 //object.create(prototype,propertiesObject) 
 //prototype- Object to be copied , we can give {} also
