@@ -19,7 +19,7 @@ let arr2 = new Array(70,80,90,100);
 console.log(`arr1 is ${arr1}`)
 console.log(`arr2 is ${arr2}`)
 
-//copying array
+//Shallow copying copying array
 let arr3 = arr2;
 console.log(`arr3 is ${arr3}`)
 
