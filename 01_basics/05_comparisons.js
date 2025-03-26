@@ -6,3 +6,5 @@ console.log(null <= 0); //true
 
 console.log(undefined == 0); //always false
 console.log(undefined <= 0);
+console.log("2" == 2)
+console.log("02" == 2)
