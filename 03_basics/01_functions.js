@@ -40,7 +40,7 @@ function name2(fname){
 }
 console.log(name2()) // output : Please enter your name ; (in second line)Undefined 
 /*reason :
-when the function does not return anything but defines return then the return will return undefined which will be prinetd by name2() calling */
+when the function does not return anything but defines "return" then the "return" will return undefined which will be prinetd by name2() calling */
 
 
 //Function Taking objects and Arrays 
