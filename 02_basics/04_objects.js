@@ -4,7 +4,7 @@
 //when we create object through literal then singleton object is not created 
 //two symbol cannot be same even if the description of Symbols is same
 
-
+//why we prefer [] over . ?
 // By literal
 let obj = {
     name : "Parveen",  // Internally name is stored as "name" (as string)
