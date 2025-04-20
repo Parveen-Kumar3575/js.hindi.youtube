@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg{
+            color : white;
+            background : #212121;
+        }
+    </style>
+</head>
+<body class="bg">
+    <div id="outer">
+        <h1 id="title" class="heading">This is title of this page<span style="display : none;">This is span content</span></h1>
+        <ul>
+            <li class="list">One</li>
+            <li class="list">Two</li>
+            <li class="list">Three</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            
+    </div>
+</body>
+</html>
+
+<!--
+Dom selectors
+1) document.getElementById('idname')
+2) document.getElementByClassName('classname')
+3) document.getElementById('idname').id
+4) document.getElementById('idname').class
+5) document.querySelector('.class || #id || tagname')
+    agar isme humne kuch select kia aur wo ek se jada hua to ye automatically first value hi pick krega
+
+6) document.querySelectorAll('same as above')
+    isme ye hmesha nodeList return krega jise index k sath acces krna jaruri hai otherwise it will give error
+    - nodelist : ye koi array nahi hai balki array ki trah hi hai , but isme hum reduce,maps wgerah nahi use kr skte , forEach kr skte h
+    - agar hum array k function iske htmlcollection pr ya node pr krna chahte hai to hume pehle inko array me convert krna hoga
+    - using : Array.from(collectionName)
+
+7) document.querySelector('[type : "password"]')
+
+    
+Now to access the text inside the tags
+ab jo h1 hai upar usko exaple ki trah lenge
+1) title.innerText => returns the text inside it but do not show hidden text
+2) title.textContent => returns full content whether it is hidden or not 
+3) title.innerHTML => returns full content with tags 
+
+
+📦 What is an HTMLCollection?
+An HTMLCollection is a collection (or group) of HTML elements returned by certain DOM methods.
+- It's not an array, but it's array-like — meaning:
+- You can use length and index access like collection[0]
+- But you can't use array methods like map(), forEach() directly
+
+
+
+
+-->

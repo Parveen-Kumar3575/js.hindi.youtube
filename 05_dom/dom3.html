@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background : #212121; color : white">
+    
+    <div class="parent" >
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+
+    <script>
+        let parent = document.querySelector('.parent');
+        console.log(parent);
+        // let parent2 = document.querySelectorAll('.parent');
+        // console.log(parent2[0]);
+
+        //children property - returns all the children inside that element
+        console.log(parent.children); // returns html collection
+        console.log(parent.children[0].innerHTML);
+
+        for(let i=0; i< parent.children.length; i++){
+
+            console.log(parent.children[i].innerHTML);
+            }
+
+        // firstElementChild - returns first child
+        // lastElementChild - returns last child
+        // ab hum child element ko select kr pa re hai , par jab hume child se parent element pr jana ho to hum wo bhi kar skta hai
+        // pura tree traverse krne se acha hum child se parent pr move kre , isse optimization achi rehti hai, use hota hai - .parentElement
+        // nextElementSibling - to move to next element sibling 
+
+
+        console.log(parent.firstElementChild);
+        console.log(parent.lastElementChild);
+
+        let child = document.querySelector('.day');
+        console.log(child.parentElement);
+        console.log(child.nextElementSibling);
+
+        console.log(parent.childNodes);// ye thoda complex data return krega iski length 9 hai jabki iske andar child elements
+        // 4 hai , aesa islie kyuki ye break(enter points) ko text ki trah count krta hai aur ye jada react me use hot hai
+
+    </script>
+</body>
+</html>
