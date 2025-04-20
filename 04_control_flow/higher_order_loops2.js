@@ -12,7 +12,7 @@ Note : Recursion is not higher order function because it calls itself and not in
 */
 
 //Array internally object ki trah store hote hai jaha keys index number hoti hai aur values jo hum dete hai, thats why its typeof is object
-// for in loop hmesha array ki keys(index) return krta hai  na ki values , balki for in loop values deta hai 
+// for in loop hmesha array ki keys(index) return krta hai  na ki values , balki for of loop values deta hai 
 
 let arr = [10,20,30,40,50];
 

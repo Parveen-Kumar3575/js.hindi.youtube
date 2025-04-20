@@ -42,6 +42,7 @@ let mapss = new Map();
 mapss.set("a" , "apple");
 mapss.set("b" , "ball");
 mapss.set("3" , "Three");
+console.log(mapss);
 
 console.log("Map  order -- ");
 for(let [key,value] of mapss){
@@ -58,7 +59,7 @@ for(let key in oo){
     console.log(key,oo[key])
 }
 
-// Dekho upar jo integer die hai as key object k case me wo pehle itereate ho rahe hai, jabki humne use bad me bnaya hai
+// Dekho upar jo integer die hai as key.... object k case me wo pehle itereate ho rahe hai, jabki humne use bad me bnaya hai
 //  aur string wali keys baad me print hori hai jabki humne pehle bnaya hai 
 
 // jabki maps me bilkul sahi order me iterate hora hai , pehle bnaya wo pehle aur baad me bnaya to baad me 
