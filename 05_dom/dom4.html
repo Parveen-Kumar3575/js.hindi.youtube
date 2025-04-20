@@ -1,0 +1,32 @@
+<!-- Learning - create dom element , delete and edit-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background : #212121; color : white;">
+    
+</body>
+
+<script>
+    let body = document.getElementsByTagName('body')[0]
+    let div = document.createElement('div');
+    console.log(div);
+
+    div.id = Math.round(Math.random()*10 +1)
+    div.className = "randomClass"
+    div.innerText = "This is div of body"
+    div.setAttribute("style","color : green")
+    div.style.backgroundColor = "yellow"
+    div.style.padding = "15px"
+
+    body.appendChild(div);
+    // document.body.appendChild(div);
+
+    const addText = document.createTextNode("Chai aur Code");
+    document.body.appendChild(addText);
+</script>
+</html>
