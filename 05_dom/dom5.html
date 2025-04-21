@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<ul class="language">
+    <li> Javascript </li>
+</ul>    
+
+<script>
+
+//ADD LI
+function newLi(listName){
+    let li = document.createElement('li')
+    let ul = document.querySelector('.language')
+    li.innerText = listName
+    ul.appendChild(li)
+}
+newLi("Python")
+
+//ADD LI WITH MORE OPTIMIZATION
+// More Optimized form  and considered more professional when it comes to complex dom manipulations
+function newLi2(listName){
+    let li = document.createElement('li')
+    li.appendChild(document.createTextNode(listName))
+    document.querySelector(".language").appendChild(li)
+}
+
+newLi2("Ruby")
+//newLi2 zyada optimized hai kyunki createTextNode directly text node banata hai, jabki innerText layout reflow trigger 
+// karta hai aur slow hota hai.
+
+
+// Edit a specific list in ul 
+function edit(n,listName){
+    let newLi = document.createElement('li');
+    let toReplace = document.querySelector(`li:nth-child(${n})`);
+    newLi.appendChild(document.createTextNode(listName))
+    // newLi.innerText = listName;
+    toReplace.replaceWith(newLi)
+}
+edit(2,"Flasks")
+edit(3,"New Lang")
+
+/*
+:nth-child(number)
+:first-child, :last-child
+
+li:nth-child(2)	          :   First <li> on the page that is 2nd child of its parent (e.g., a ul)
+ul li:nth-child(2)	      :   2nd child <li> inside a specific <ul>
+.myList li:nth-child(2)	  :   2nd <li> inside a list with class myList
+
+
+
+
+let fChild = document.querySelector("li:first-child")
+fChild.outerHTML = "duck"
+
+*/
+
+
+//DELETING A LIST
+document.querySelector("li:last-child").remove();
+
+</script>
+</body>
+</html>
