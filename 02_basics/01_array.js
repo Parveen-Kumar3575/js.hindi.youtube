@@ -13,6 +13,17 @@
 // To deep copy we can use structuredClone(obj)
 
 
+/* Array are in js are dynamic aur static ?
+array js k andr dynamic hote hai kyuki size jo hai wo runtime pr change hota hai 
+
+dynamic array ka matlab ?
+dynamic matlab ye nahi hota ki agar humne 
+runtime pr array ki length leli aur use array k size me dedia to wo dynamic ho gayi , wo to fir bhi static hai kyuki size to humne
+fir bhi define krna pada chahe humne runtime pr hi kyu  na kia ho 
+
+*/
+
+
 
 let arr1 = [10,20,30,40,50,60]
 let arr2 = new Array(70,80,90,100);
