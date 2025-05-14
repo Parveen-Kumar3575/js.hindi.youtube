@@ -1,0 +1,30 @@
+javascript is synchronous single threaded language, matlab ek time pr ek hi task perform kar skta hai 
+
+ye multi-threaded jaisa behave kar sakta hai par non-blocking code ka istemaal krke
+
+Blocking code VS non-blocking code 
+----------------------------------
+=> Blocking Code:
+ Jab ek operation (jaise file read ya API call) chal raha hota hai, tab tak baaki ka code ruk jaata hai.
+ Agla line tab tak execute nahi hoti jab tak current task complete na ho.
+
+=> Non-blocking Code :
+    Ruko mat, kaam chalu rakho. Jab dusra kaam ho jaye, uska result baad me le lena.
+
+par inka use case bhi depened krta hai jaise hum har kaam ko non blocking se nahi kr skte , socho ek database me data store krwana hai 
+aur store hone pr success message dikhana hai , non-blocking me to aese wo success message b dikha dega aur kya pta data b na store ho 
+
+
+
+Asynchronous Code Execution Process
+-------------------------------------
+
+JS engine -->  Web API --> Task Queue --> Add to call stack (present in JS Engine) for Execution
+
+Above is case of setTimeOut,setTimeInterval etc.
+
+
+
+Incase of Promises(special API fetch k case me) a special task queue is created which has higher priority than normal Task Queue (like task queue of setTimout etc.)
+-----------
+ JS Engine --> Web API  -->  Higher Task Queue --> Add to Call Stack
