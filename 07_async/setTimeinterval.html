@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+<body>
+    <h1>Set Time Interval</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        // Set time interval takes 3 para - function, milliseconds, argument(optional) to be passed in function 
+        // setInterval(handler,milliseconds,argument of handler to be pass)
+        // clearInterval(reference)
+        let i = 0
+        let changeMe;
+        document.querySelector("#start").addEventListener("click",()=>{
+            console.log("started")
+            changeMe = setInterval((para)=>{
+            console.log(para + i++)
+            },2000,"Parveen")
+
+        })
+
+        document.querySelector("#stop").addEventListener("click",()=>{
+            console.log("Stopped")
+            clearInterval(changeMe);
+        })
+        
+    </script>
+</body>
+</html>
