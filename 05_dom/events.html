@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="" ></li>
+            <li> <a  href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+   
+<script>
+
+    /*
+    3 ways to add Event --
+
+    1) inside html - which is not prefered because not suitable for scalable applications - onclick ="alert('Image clciked')"
+    2) by manually onclick like btn.onclick = ---   which is also not prefered bacause does not give acces to much information
+    3) addEventListener function => which is prefered , overcoming all limitations 
+    4) attachEvent => not in use , it was use to make compatible with internt explorer
+
+
+
+    addevent listener ka jo parameter hota hai wo kaafi saari chize deta hai aur interview me kayi baar usse related question b puchte hai 
+    jaise ki question - ek program likho jisme jaha me click kru waha pr ek circle create ho jaye , toh jab hum kahi click krte hai
+    to uski x,y position ki detail aa jati hai aur width b , to fir uska use krke hum ye chiz kr skte hai 
+
+    */
+
+    let  prayer = document.querySelector("#prayer")
+    prayer.addEventListener("click",(e)=>{
+        console.log(e)
+    })
+
+    /*
+    IMP details about event  -
+
+    1) clientX , clientY - gives viewport related info of where the mouse is clicked
+    2) e.timeStamp = 5000 → means the event occurred 5 seconds after the page started loading.
+    3) type => returns the type of event 
+    4) altkey => returns true if alkey is pressed, ctrlkey , shiftkey(sabka true apne liye)
+    5) keyCode => returns char number which is clicked like for A is 65
+
+    pehle niche padh - jaise <ul> pr listener laga hai aur humne li pr click kia toh fir .target toh li return krega(jis pr click hua hai)
+     pr currentTarget return krega wo element jispr event laga hua hai 
+    6) event.target => Jis element par click hua
+    7) event.currentTarget => Jis element par listener laga hai
+
+
+    8) toElement => btata hai ki mouse kis element ki trf move ho raha hai (mainly mouse wale events pr use hota hai ) 
+    9) srcElement,defaultPRevented
+
+
+
+
+
+    *****   IMP    *****
+
+    addeventListener k 3 parameter hote hai 
+    1) Type => event type
+    2) listener => function jo listen ya call krega 
+    3) true/false/{option : true/false} like {passive : true}
+
+    dekho same propagation se related hai sab , maan lo waise hi outer box hai aur inner box ---------------
+
+        a) sirf true(event Capturing) =>  matlab event outside se inside call hoga jo bahar ka hai wo pehle chlega aur andar ka baad me
+
+        b) sirf false(by default,event bubbling) => pehle inside ka function call hoga fir outside ka 
+
+        c) {passive : true}  => Agar true likh diya,agar humne prevent default lagaya hai to ye usse block krdega 
+
+        d) {once : true} =>  Agar true likh diya, to function sirf ek baar chalega, uske baad nahi chalega, mtalb stopPropagation ki trah
+
+    */
+        document.querySelector("#images").addEventListener("click",()=>{
+                console.log("Ul clicked ")
+        },false)
+
+        document.querySelector("#google").addEventListener("click",(e)=>{
+                e.preventDefault()
+                // e.stopPropagation()
+                console.log("Google clicked ")
+        },false)
+
+
+
+        let ul = document.querySelector("#images")
+        ul.addEventListener("click",(e)=>{
+                // hume image remove krni hai par uski <li> bhi kyuki fir bullet reh jayega 
+
+
+                // if islie kyuki agr li ko click kia to wo pura ul select krega(apna parent) aur usse hi remove krdega
+                if(e.target.tagName === "IMG"){
+                let li = e.target.parentNode    //parent node li ko target krega kyuki uske andr image hai 
+                li.remove();
+
+                // li.parentNode.removeChild(li)
+                }
+                
+        })
+</script>
+
+</body>
+
+</html>
