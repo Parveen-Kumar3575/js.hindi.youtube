@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            position : absolute;
+            top : 40%;
+            left : 30%;
+        }
+        div{
+            display : flexbox;
+            gap : 30px;
+            position : absolute;
+            top : 50%;
+            left : 45%;
+            
+        }
+        /* #start{
+            margin-right : 40px;
+        } */
+    </style>
+</head>
+<body>
+    <h1>Background Color Will change Automatically !</h1>
+    <div>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+    <script>
+        let StopBg;
+
+        function randColor(){
+              
+                let red = Math.trunc(Math.random() *(256-1)+1);
+                let green = Math.trunc(Math.random() *(256-1)+1);
+                let blue = Math.trunc(Math.random() *(256-1)+1);
+                document.body.style.background =  `rgba(${red},${green},${blue},1)`
+          
+            
+        }
+
+
+        document.querySelector("#start").addEventListener("click",()=>{
+        //    let body = document.getElementsByTagName('body')
+
+            if(!StopBg){ //Agar tum dobara clearInterval(StopBg) call karoge bina check kiye, 
+                                    // aur StopBg purani value hold kar raha hoga (maan lo 2), to kya pata JavaScript us ID ko kisi naye interval ko assign kar chuki ho?
+          StopBg = setInterval(randColor,1000)
+            }
+        }
+        )
+
+        document.querySelector("#stop").addEventListener("click",()=>{
+            clearInterval(StopBg)
+            StopBg = null // Ye jaruri hai , taaki stack me jo intervalId ne le rkhi hai wo free ho jaaye
+        })
+
+
+    </script>
+</body>
+</html>
