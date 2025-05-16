@@ -1,0 +1,124 @@
+🔹 API kya hai?
+    1) API = Application Programming Interface
+    2) Yani ek tariqa ya set of rules jiske zariye do software systems aapas me baat karte hain.
+    3) ye ek bridge ki trah hai jo do apps ko connect krta hai taaki wo apas me data ko exchange kr sakte 
+
+Examples :-
+1) jaise ek toh waiter wala ki wo order leta hai aur lunch lata hai , to wo kitchen or customer k beech api ki trah kaam kr ra hai
+2) aur ek weather api jo data laati hai ki delhi me kya temperature hai , hume ni pta ki wo data kaha se kaise fetch kr raha hai, 
+    satellite se data kaise aa ra hai,piche kya calculations chlri hai 
+
+
+XHR Process :-
+----------------
+readyState	Meaning
+0	UNSENT (object ban gaya, but request open nahi hui) matlab client ban gya par open() nahi hua call 
+1	OPENED (request open ho gayi, send abhi nahi hua) open() has been called 
+2	HEADERS_RECEIVED (server ne headers bhej diye) send() has been called
+3	LOADING (data aa raha hai, partially)
+4	DONE (response mil gaya, complete)
+
+
+
+
+✅ XMLHRequestttp ka matlab kya hai?
+XMLHttpRequest (XHR) ek built-in JavaScript object hai,
+jiska use hum browser se server ko request bhejne aur data lene ke liye karte hain — bina page reload kiye.
+
+
+📜 Breakdown of the Name:
+Part	    Meaning
+XML	        Originally use hota tha XML data transfer ke liye (ab mostly JSON use hota hai)
+HTTP	    HTTP protocol ke through request bhejta hai (GET, POST, etc.)
+Request	    Ye object request bhejne ka kaam karta hai browser → server
+
+
+
+onreadystatechange ka kya matlab hai ?
+    XMLHttpRequest me onreadystatechange ek event handler hota hai jo tab call hota hai jab 
+    readyState property change hoti hai. Ye automatic hota hai — JavaScript ya browser aapke code ke kisi manual call ke bina is
+    function ko call karta hai jab XMLHttpRequest object ke readyState me koi bhi change hota hai.
+
+
+hume parse kyu krna padta hai response ko ?
+    sometime data response me jab ata hai tab wo object se string me convert ho kr ata hai to fir hume ise json me convert krna hota hai 
+
+
+Js aur V8 engine ?
+
+    1) V8 engine ek program hai jo JavaScript code ko machine code (computer samajhne wali language) mein convert karta hai, taaki wo 
+    fast chale.
+
+    2) v8 engine c++ me likha hua hai 
+
+
+Promises
+---------
+
+promises k aane se pehle ek library use ki jaati thi "bluebird" ya "q" kyuki js k core concepts me .then() .catch ye sab nahi tha,
+hume npm package vgerah ka use krke isse integerate krna padta tha , ye ek library thi jo kisi ne already bna rkhi thi ,but ab js 
+ne isse officialy apne core concepts me integerate krlia hai toh isilie hume ab koi package install krne ki jarurat nahi hai 
+
+
+🔹 Promise kya hota hai?
+Promise JavaScript ka ek object hota hai jo future me hone wale kisi asynchronous kaam ka result represent karta hai 
+— ya to success (resolve) ya failure (reject).
+
+
+promise = future me hone wala vada ka result
+
+iske 3 states hote hai :-
+1) pending 
+2) resolved
+3) reject
+
+
+🔹 1. Promise banana (create karna):
+
+        [] new Promise(executorFunction)
+        [] executorFunction ke paas do arguments hote hain: resolve,reject
+    
+🔹 2. Promise use karna (consume karna):
+
+        promiseObject.then(successCallback).catch(errorCallback).finally(optionalCallback)
+
+        .then() → jab kaam ho jaye (resolve ho)
+        .catch() → jab error aaye (reject ho)
+        .finally() → har hal me chalega (success ya fail dono me)
+
+
+
+Why Promises ?********
+
+    dekho jo tumne db wala socha ki wo blocking code k sath lr skta hai , jisme kya hoga ki pehle query excute hoga aur fir aage ka code
+    execute hoga , but isse pura Application freeze hojayega na koi button chalega , app lagg krega , unresponsive hojega etc.
+
+    but promises k aane se ye query ko promise krdega , aur backend me execute krta rahega jab uska result ayega tab hume message a jaeyga 
+    benefits - na koi code block hoga aage ka , UI full response krega , button vgerah sab chalega 
+
+
+
+Async Await ?********
+
+1) async await promises k baad introduce hua , matalab ye method latest hai 
+2) promises me callback hell ho jata tha bar-bar .then.then.then jo ki unreadable bhi ho jata tha 
+3) Async - ye btata hai ki iss function k andar asynchronous code likha hua hai 
+4) await -  “ruk ja jab tak Promise complete na ho.”
+
+ye code ko simple bnata hai , error try catch se handle easily hote hai , debugging easy 
+
+baaki kisi se bhi krlo koi problem nahi hai  
+
+****** agar network error hai tabhi error dega otherwise agr 404 error aya hai to wo as response ayega na ki as reject
+
+Fetch kya hai ?
+------------------
+fetch ek built in function hai jo kisi url se data mangwata hai aur ek promise return krta hai .
+
+agr kuch additional data b bhejna ho sath me toh -
+const header = {
+    'content' : "Kuch bhi ",
+    'next' : "Webpage"
+}
+
+fetch("link",{header})
