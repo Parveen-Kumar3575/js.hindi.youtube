@@ -6,8 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    
-</body>
+  
 <script>
     let xhr = new XMLHttpRequest()
     let url = "https://api.github.com/users/hiteshchoudhary"
@@ -17,10 +16,13 @@
             let data = JSON.parse(this.responseText)
             document.body.innerHTML = `
                 <h1>User : ${data.name} </h1>
-                <img src='${avatar_url}'
+                <img src='${data.avatar_url}' height ="400px" width="400px">
+                <h2> BIO : ${data.bio} </h2>
             `
         }
     }
     xhr.send()
 </script>
+</body>
+
 </html>
