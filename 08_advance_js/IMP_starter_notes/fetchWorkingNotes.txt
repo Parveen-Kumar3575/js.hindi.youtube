@@ -1,0 +1,14 @@
+dekho jab hum fetch() ko call krte hai toh behind the scenes do chize hoti hai - (refer video 41)
+
+1) ek memory allocate hoti hai 
+2) fetch web api ya node api ki traf bhegta hai 
+
+memory allocate me data hota hai jo private field hai aur accessible nahi hai 
+aur iske andar onfullfiled aur onrejection hote hai jo data k andar kuch bhejte hai 
+
+
+dusra fetch web api -
+ye network ki taraf jata hai jo kuch response bhejta hai , agar network ko call hi nahi gayi to wo reject krdega 
+aur agar request gayi aur wo 404 jaise error dia to bhi wo fullfilled hi mana jayega aur data field me kuch ajayega
+
+ab data field response k andar kuch bhejta hai jo hume dikhta hai 
