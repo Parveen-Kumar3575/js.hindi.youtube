@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let xhr = new XMLHttpRequest()
+    let url = "https://api.github.com/users/hiteshchoudhary"
+    xhr.open("get",url)
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4){
+            let data = JSON.parse(this.responseText)
+            document.body.innerHTML = `
+                <h1>User : ${data.name} </h1>
+                <img src='${avatar_url}'
+            `
+        }
+    }
+    xhr.send()
+</script>
+</html>
