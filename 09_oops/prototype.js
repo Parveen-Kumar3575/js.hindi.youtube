@@ -23,9 +23,11 @@ firstTest.prototype.printme = function(){
 
 /* 
 ******
-jab hum prototype se apne kuch function ya property  define krte hai to wo automatically prototype k andar inject nahi hota hume use 
+jab hum prototype se apne kuch function ya property  define krte hai to wo automatically prototype k andar inject nahi hota ,hume use 
 krna hota hai , aur ye kaam hum "new" keyword ka istemaal krke krte hai 
 
+dekho new keyword hum bas function k case me hi islie use krna hota hai na ki array,string etc k case me reason -
+kyuki hume uss function ka object create krna hota hai aur methods protype k jo humne bnae h wo to sirf object pr hi kaam krenge 
 */
 const userOne = new firstTest("Parveen",12)
 const userTwo = new firstTest("Kumar",11)
