@@ -43,3 +43,24 @@
 2) Important point about "new"
     a) jaise hi new ka use krte hai toh ek empty object create ho jata hai , aur iss object ko instance bolte hai
     b) new keyword k kaaran constructor function call hota hai 
+
+
+
+Prototypes in js------  (javascript haar nahi maanti hai )
+
+yaad krne ka tarika - hidden property, upar wala object, js behavior, js k andar sab obj hai
+
+1) javascript me har object k pass ek hidden property hoti hai jisse prototype kehte hai - [[Prototype]] (jo ki hum __proto__ ya .      prototype ke through dekh sakte hain).
+
+2) protoype javascript ka upar wala object hai , jaha se objects jo humne bnae hai wo properties ya methods inherit krte hai 
+
+3) javascript ka behaviour hai ki wo ek property ya method ko jab tak dhundta hai jab tak usse mil nahi jata, iske liye wo prototype chaining follow krta hai matlab upar se upar wale object prototype me jata rehta hai , jab tak mil na jaaye ya fir wo null tackle na kar le islie js k behaviour ko prototypal behaviour b kehte hai
+**Aur object k aage kuch b ni hai ye end of js hai 
+
+4) js k andar sab kuch ek object hai - function,array,string , iske baad null ata hai 
+    array -> object ->null
+    string -> object ->null
+    func -> object -> null
+
+function k sath bhi hum property ka instemaal kr skte hai 
+uskanaam.propertyName = value ;
