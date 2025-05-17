@@ -12,3 +12,9 @@ ye network ki taraf jata hai jo kuch response bhejta hai , agar network ko call 
 aur agar request gayi aur wo 404 jaise error dia to bhi wo fullfilled hi mana jayega aur data field me kuch ajayega
 
 ab data field response k andar kuch bhejta hai jo hume dikhta hai 
+
+
+
+******  IMP ******
+fetch(...) Promise return करता है।
+लेकिन await उस Promise को resolve करके uska Response object देता है।
