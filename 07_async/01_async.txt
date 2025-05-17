@@ -28,3 +28,11 @@ Above is case of setTimeOut,setTimeInterval etc.
 Incase of Promises(special API fetch k case me) a special task queue is created which has higher priority than normal Task Queue (like task queue of setTimout etc.)
 -----------
  JS Engine --> Web API  -->  Higher Task Queue --> Add to Call Stack
+
+
+ Kya Js Multithreaded hai ?
+ -----------------------------
+ nahi, ye behave krti hai waisa but hai nahi kyuki js engine ek hi kaam krta hai matlab ek hi thread pr, jab asynchronous programming 
+ aati hai tab ye apna kaam kisi aur ko bhej deta hai general web Api ya browseer api ko jisse kaam ho kr result ata hai aur add ho jata hai
+ call stack k js engine me fir wo execute krta hai 
+ Toh islie ye multithreaded nahi hai 
