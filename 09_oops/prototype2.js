@@ -30,6 +30,7 @@ Array.prototype.arrayFunc = function(){
 user.greet()
 array.greet()
 array.arrayFunc()
+
 // user.arrayFunc() ye error throw krega 
 
 // func.greet()
