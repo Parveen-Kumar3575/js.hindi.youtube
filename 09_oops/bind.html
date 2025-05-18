@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    /*
+    confusing hai ye 
+    1) bind() ek method hai jo function ka this permanently kisi object se jod deta hai aur ek naya function return karta hai. ✅
+    2) bind() se aap ensure karte ho ki this hamare desired object pe hi point kare – chahe us function ko kahin bhi call karo.
+
+    */
+    class react{
+        constructor(){
+            this.library = "React"
+            this.server = "localhost"
+
+            document.querySelector("button").addEventListener("click",this.eventHandler.bind(this))
+            // bind button ko bind krdega class k sath 
+        }
+
+        eventHandler(){
+            console.log("Button Clicked")
+            console.log(this)  // ye by default html button ko point krega  kyuki button ne hi isse call kia hai ,but agar hum apne object ka 
+                            // this dena chahte hai to hume bind ka use krna hoga eventhandler function k sath jisse ki uske andar ki 
+                            // body class k object ko point kregi 
+        }
+    }
+
+    const obj = new react()
+</script>
+</html>
