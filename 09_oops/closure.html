@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Closure and Lexical Scope Example</h1>
+    <div>
+    <button id="green">green</button>
+    <button id="red">red</button>
+    <button id="yellow">yellow</button>
+    </div>
+</body>
+<script>
+    // document.querySelectorAll('button').forEach((el)=>{
+    //     el.addEventListener("click",(e)=>{
+    //     document.body.style.background = e.target.id
+    //     })
+    // })
+   // upar wala to khud ka hi try hai ---ignore or read 
+
+   // through closures
+
+   function changeColor(color){
+    // document.body.style.background = `${color}`
+    
+    // ye closure k use se ho pa ra hai kyuki onlick function execution mangta hai na ki func defination 
+    return function(){
+        document.body.style.background = `${color}`
+    }
+
+   }
+
+   document.querySelector('#yellow').onclick = changeColor('yellow')    // ye by default yahi execute ho jayega jisse wo page automaaticaaly
+   // usi rang ka reh jayega, yahi pr use hote hai closure taaki hum refernce pass kre aur fir wo function ek function return kre 
+</script>
+</html>
