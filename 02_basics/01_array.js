@@ -21,6 +21,21 @@ dynamic matlab ye nahi hota ki agar humne
 runtime pr array ki length leli aur use array k size me dedia to wo dynamic ho gayi , wo to fir bhi static hai kyuki size to humne
 fir bhi define krna pada chahe humne runtime pr hi kyu  na kia ho 
 
+
+*** ye last video ka part hai baad me add kia hai ***
+array ki optimization kuch chizo pr depend krti hai aur ye do me divide hai -
+
+1) Packed - jisme saari values hai  2) Holey - jisme kuch values blank hai 
+
+    # SMI (small interger)
+    # packed element
+    # Double (float,string, function)
+
+    agar humne double add krdia kisi array integer me jaise [1,2,3,4,5] , aur hum push kre decimal arr.push(3.3) to iski optimization
+    degrade ho jayegi 
+
+    agar ek baar optimization degrade ho gayi to koi chance nahi hai ki use upgrade kia ja sake chahe hum value jo add ki hai usko delete krde
+
 */
 
 
