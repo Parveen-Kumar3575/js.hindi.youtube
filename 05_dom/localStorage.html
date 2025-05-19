@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Local Storage in Javascript</h1>
+    
+    <form action="">
+        <label for="inpName">Name : </label>
+        <input type="text" id="inpName" required>
+        <input type="submit" value="Change Name">
+   
+    </form>
+
+    <input type="text" id="realChange">
+
+    <h2>My name is <span class='printName'></span></h2>
+    
+</body>
+<script>
+    /*
+
+    1) localstorage ek built-in object hai storage interface ka , jo web storage API ka part hai , iska protoype me storage hai  
+    2) ye hume allow krta hai ki hum key value pair me data ko permanently store kr sake 
+    3) ye sirf string value hi allow krta hai store hone k lie.
+    4) part of window object with one length property - window.localStorage 
+
+    MAIN METHODS
+    -----
+    .setItem(key,value)
+    .getItem(key)
+    .removeItem(key)
+    .clear()
+
+    #   KONSE DATATYPES KO STORE KR SKTE HAI ? 
+        ye sirf string store krta hai , but agar hum object store krana chahte hai to hum use json me convert kr skte hai
+        # json.stringify(objectName)    # convert back - JSON.parse(Keyname)
+
+
+    # KYA HUM MULTIPLE PAGE PR DEKH SKTE HAI LOCALSTORAGE ?
+        ye humne jis protocal+domain+port isi pr access kr skte hai , jisse securtiy bani rehti hai 
+
+    # KYA ISKI KOI LIMIT HOTI HAI 
+        iski limit 5 - 10 MB hoti hai , depends on browser
+
+    */
+    // localStorage.setItem('name',"Parveen")
+    // when property not exist and we access through - getItem() returns null , if localStorage.property returns undefined
+
+    let printName = document.querySelector(".printName")
+    document.querySelector('form').addEventListener("submit",(e)=>{
+        let value = document.getElementById('inpName').value
+        localStorage.setItem('name',value)
+        // OR
+        // localStorage.name = document.getElementById('inpName').value => NOT RECOMMENDED
+        
+    })
+    printName.innerText = localStorage.getItem('name')
+    console.log(localStorage.getItem('name'))
+
+    //real time change
+    document.getElementById('realChange').addEventListener("input",(e)=>{
+        let value = document.getElementById('realChange').value
+        localStorage.setItem('name',value)
+        printName.innerText =  localStorage.getItem('name')
+    })
+
+</script>
+</html>
